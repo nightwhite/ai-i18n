@@ -24,7 +24,7 @@ const parser = {
 		return pad(dateObj.day)
 	},
 	d: (dateObj) => {
-		return dateObj.day
+		return dateObj.day 
 	},
 	hh: (dateObj) => {
 		return pad(dateObj.hour)
@@ -52,7 +52,7 @@ const parser = {
 	},
 }
 
-// 这都n年了iOS依然不认识2020-12-12，需要转换为2020/12/12
+// 这都 n 年了 iOS 依然不认识 2020-12-12，需要转换为 2020/12/12
 function getDate(time) {
 	if (time instanceof Date) {
 		return time

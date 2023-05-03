@@ -59,8 +59,8 @@
 	 * @value right		label 右侧对齐
 	 * @property {String} errShowType = [undertext|toast|modal]	校验错误信息提示方式
 	 * @value undertext	错误信息在底部显示
-	 * @value toast			错误信息toast显示
-	 * @value modal			错误信息modal显示
+	 * @value toast			错误信息 toast 显示
+	 * @value modal			错误信息 modal 显示
 	 * @event {Function} submit	提交时触发
 	 * @event {Function} validate	校验结果发生变化触发
 	 */
@@ -85,7 +85,7 @@
 					return null;
 				}
 			},
-			// 1.4.0 开始将不支持 v-model ，且废弃 value 和 modelValue
+			// 1.4.0 开始将不支持 v-model，且废弃 value 和 modelValue
 			model: {
 				type: Object,
 				default () {
@@ -195,11 +195,11 @@
 		methods: {
 			/**
 			 * 外部调用方法
-			 * 设置规则 ，主要用于小程序自定义检验规则
+			 * 设置规则，主要用于小程序自定义检验规则
 			 * @param {Array} rules 规则源数据
 			 */
 			setRules(rules) {
-				// TODO 有可能子组件合并规则的时机比这个要早，所以需要合并对象 ，而不是直接赋值，可能会被覆盖
+				// TODO 有可能子组件合并规则的时机比这个要早，所以需要合并对象，而不是直接赋值，可能会被覆盖
 				this.formRules = Object.assign({}, this.formRules, rules)
 				// 初始化校验函数
 				this.validator = new Validator(rules);
@@ -207,7 +207,7 @@
 
 			/**
 			 * 外部调用方法
-			 * 设置数据，用于设置表单数据，公开给用户使用 ， 不支持在动态表单中使用
+			 * 设置数据，用于设置表单数据，公开给用户使用，不支持在动态表单中使用
 			 * @param {Object} key
 			 * @param {Object} value
 			 */
@@ -252,7 +252,7 @@
 			/**
 			 * 外部调用方法
 			 * 移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果
-			 * @param {Array|String} props 需要移除校验的字段 ，不填为所有
+			 * @param {Array|String} props 需要移除校验的字段，不填为所有
 			 */
 			clearValidate(props = []) {
 				props = [].concat(props);
@@ -269,7 +269,7 @@
 			},
 
 			/**
-			 * 外部调用方法 ，即将废弃
+			 * 外部调用方法，即将废弃
 			 * 手动提交校验表单
 			 * 对整个表单进行校验的方法，参数为一个回调函数。
 			 * @param {Array} keepitem 保留不参与校验的字段
@@ -286,7 +286,7 @@
 				}
 
 				if (!type) {
-					console.warn('submit 方法即将废弃，请使用validate方法代替！');
+					console.warn('submit 方法即将废弃，请使用 validate 方法代替！');
 				}
 
 				return this.checkAll(this.formData, keepitem, callback, 'submit');
@@ -294,10 +294,10 @@
 
 			// 校验所有
 			async checkAll(invalidFields, keepitem, callback, type) {
-				// 不存在校验规则 ，则停止校验流程
+				// 不存在校验规则，则停止校验流程
 				if (!this.validator) return
 				let childrens = []
-				// 处理参与校验的item实例
+				// 处理参与校验的 item 实例
 				for (let i in invalidFields) {
 					const item = this.childrens.find(v => realName(v.name) === i)
 					if (item) {
@@ -305,7 +305,7 @@
 					}
 				}
 
-				// 如果validate第一个参数是funciont ,那就走回调
+				// 如果 validate 第一个参数是 funciont ,那就走回调
 				if (!callback && typeof keepitem === 'function') {
 					callback = keepitem;
 				}
@@ -321,9 +321,9 @@
 				}
 
 				let results = [];
-				// 避免引用错乱 ，建议拷贝对象处理
+				// 避免引用错乱，建议拷贝对象处理
 				let tempFormData = JSON.parse(JSON.stringify(invalidFields))
-				// 所有子组件参与校验,使用 for 可以使用  awiat
+				// 所有子组件参与校验，使用 for 可以使用  awiat
 				for (let i in childrens) {
 					const child = childrens[i]
 					let name = realName(child.name);
@@ -375,7 +375,7 @@
 			},
 
 			/**
-			 * 返回validate事件
+			 * 返回 validate 事件
 			 * @param {Object} result
 			 */
 			validateCheck(result) {

@@ -52,7 +52,7 @@
 
   /**
    * DataPicker 级联选择
-   * @description 支持单列、和多列级联选择。列数没有限制，如果屏幕显示不全，顶部tab区域会左右滚动。
+   * @description 支持单列、和多列级联选择。列数没有限制，如果屏幕显示不全，顶部 tab 区域会左右滚动。
    * @tutorial https://ext.dcloud.net.cn/plugin?id=3796
    * @property {String} popup-title 弹出窗口标题
    * @property {Array} localdata 本地数据，参考
@@ -517,7 +517,7 @@
 
   /* #endif */
 
-  /* picker 弹出层通用的指示小三角, todo：扩展至上下左右方向定位 */
+  /* picker 弹出层通用的指示小三角，todo：扩展至上下左右方向定位 */
   /* #ifndef APP-NVUE */
   .uni-popper__arrow,
   .uni-popper__arrow::after {

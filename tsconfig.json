@@ -10,5 +10,5 @@
     "lib": ["esnext", "dom"],
     "types": ["@dcloudio/types","node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/uni_modules/uni-data-picker/components/uni-data-picker/keypress.js", "src/uni_modules/uni-data-picker/components/uni-data-pickerview/uni-data-picker.js", "src/uni_modules/uni-dateformat/components/uni-dateformat/date-format.js", "src/uni_modules/uni-forms/components/uni-forms/utils.js", "src/uni_modules/uni-forms/components/uni-forms/validate.js"]
 }
